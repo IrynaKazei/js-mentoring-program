@@ -23,7 +23,7 @@ let bool = (int === int2);
 /**
  * TODO create variable named arr and set value array of numbers from 1 to 5
  */
-let arr = [ 1, 2, 3, 4, 5];
+const arr = [ 1, 2, 3, 4, 5];
 /**
  * TODO create variable named fifth and set value as element of array with index 4
  */
@@ -31,7 +31,7 @@ let fifth = arr[4];
 /**
  * TODO create variable named human and set value as object with key firstName and value "John"
  */
-let human = {
+const human = {
     firstName:'John'
 };
 /**
