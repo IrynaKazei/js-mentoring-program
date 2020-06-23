@@ -54,16 +54,16 @@
     const operator = "add";
 
     switch (operator) {
-        case operator === "add":
+        case "add":
             result = x + y;
             break;
-        case operator === "subtract":
+        case "subtract":
             result = x - y;
             break;
-        case operator === "multiply":
+        case  "multiply":
             result = x * y;
             break;
-        case operator === "divide":
+        case "divide":
             result = x / y;
             break;
         default:

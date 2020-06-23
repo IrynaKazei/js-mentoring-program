@@ -33,7 +33,7 @@ function calculateDiscount(redemption) {
     const i = 10; //10! = 3628800
     let factorial = 1;
     for (let j = 1; j <= i; j++) {
-        factorial = factorial * j;
+        factorial *= j;
     }
     console.log(factorial);
 }
@@ -43,7 +43,7 @@ function calculateDiscount(redemption) {
     let factorial = 1;
     let j = 1;
     while (j <= i) {
-        factorial = factorial * j;
+        factorial *= j;
         j++;
     }
     console.log(factorial);
@@ -54,7 +54,7 @@ function calculateDiscount(redemption) {
     let factorial = 1;
     let j = 1;
     do {
-        factorial = factorial * j;
+        factorial *= j;
         j++;
     }
     while (j <= i);
@@ -69,7 +69,7 @@ function calculateDiscount(redemption) {
     const substr = ["I", "love", "JS"];
     let phrase= '';
     for (let i = 0; i < substr.length; i++) {
-        phrase = phrase + substr[i] + " ";
+        phrase += substr[i] + " ";
 
     }
     console.log(phrase);
@@ -87,7 +87,7 @@ function calculateDiscount(redemption) {
     };
     let income = 0;
     for (let property in personIncomes) {
-        income = income + personIncomes[property];
+        income += personIncomes[property];
     }
     console.log(income);
 }
