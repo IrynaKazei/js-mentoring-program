@@ -24,8 +24,7 @@ function getFullName(object) {
  * true if odd, false if even
  */
 function isOdd(n) {
-    let x = n % 2;
-    if (x == 0) {
+    if (n % 2 == 0) {
         return false;
     } else {
         return true;
@@ -52,11 +51,7 @@ function getShortest(wordArray) {
  * e.g getGoogle(5) should return "gooooogle"
  */
 function getGoogle(n) {
-    let google = "g";
-    for (let j = 1; j <= n; j++) {
-        google += "o";
-    }
-    return google + "gle";
+    return 'g' + 'o'.repeat(n) + 'gle';
 }
 
 /**
@@ -68,13 +63,12 @@ function getGoogle(n) {
  *    age: 42
  * }
  */
-function getUser(firstName, lastName, age) {
-    let person = {};
-    person.firstName = firstName ? firstName : null;
-    person.lastName = lastName ? lastName : null;
-    person.age = age ? age : null;
-
-    return person;
+function getUser(firstName = null, lastName = null , age = null) {
+    return {
+        firstName: firstName,
+        lastName: lastName,
+        age: age
+    }
 }
 
 /**
