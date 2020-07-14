@@ -3,7 +3,7 @@
  *
  */
 function add(a, b) {
-
+    return a + b;
 }
 
 /**
@@ -15,15 +15,20 @@ function add(a, b) {
  * }
  */
 function getFullName(object) {
-
+    return object.firstName + ' ' + object.lastName;
 }
+
 
 /**
  * write fuction that checks is number is odd
  * true if odd, false if even
  */
 function isOdd(n) {
-
+    if (n % 2 == 0) {
+        return false;
+    } else {
+        return true;
+    }
 }
 
 /**
@@ -31,7 +36,14 @@ function isOdd(n) {
  * e.g ["one", "two", "three"] should return one
  */
 function getShortest(wordArray) {
+    let shortestWord = wordArray[0];
+    for (const element of wordArray) {
+        if (element.length < shortestWord.length) {
+            shortestWord = element;
+        }
+    }
 
+    return shortestWord;
 }
 
 /**
@@ -39,7 +51,7 @@ function getShortest(wordArray) {
  * e.g getGoogle(5) should return "gooooogle"
  */
 function getGoogle(n) {
-
+    return 'g' + 'o'.repeat(n) + 'gle';
 }
 
 /**
@@ -51,8 +63,12 @@ function getGoogle(n) {
  *    age: 42
  * }
  */
-function getUser(firstName, lastName, age) {
-
+function getUser(firstName = null, lastName = null , age = null) {
+    return {
+        firstName: firstName,
+        lastName: lastName,
+        age: age
+    }
 }
 
 /**
@@ -62,18 +78,25 @@ function getUser(firstName, lastName, age) {
  */
 
 function getTotalPath(path) {
-
+    let totalPath = 0;
+    for (const element of path) {
+        totalPath += element.distance;
+    }
+    return totalPath;
 }
+
 
 /**
  * write a function that will calculate a discount considering the Amount
  * and the percentage (hint: you need to use the Closure here)
- * @param {amount} num 
- * @param {percentage} num 
+ * @param {amount} num
+ * @param {percentage} num
  */
 
 function discountFunction(amount) {
-
+    return function (percentage) {
+        return percentage - percentage * amount / 100;
+    };
 }
 
 /**
@@ -84,27 +107,29 @@ function discountFunction(amount) {
  */
 
 const myObject = {
-	name: 'John',
-	lastName: 'Doe',
-	age: 25,
-	friends: ['Mike', 'Alan', 'Daniel'],
-	keys() {
-		//write your code here
-	},
-	call() {
-		//write your code here
-	}
+    name: 'John',
+    lastName: 'Doe',
+    age: 25,
+    friends: ['Mike', 'Alan', 'Daniel'],
+    keys() {
+        for (const key in this) {
+            console.log(key);
+        }
+    },
+    call() {
+        return "My name is " + this.name + " " + this.lastName + " and I am " + this.age + " years old. My best friend is " + this.friends[2];
+    }
 
 };
 
 module.exports = {
-	add,
-	getFullName,
-	isOdd,
-	getShortest,
-	getGoogle,
-	getUser,
-	getTotalPath,
-	discountFunction,
-	myObject
+    add,
+    getFullName,
+    isOdd,
+    getShortest,
+    getGoogle,
+    getUser,
+    getTotalPath,
+    discountFunction,
+    myObject
 };
