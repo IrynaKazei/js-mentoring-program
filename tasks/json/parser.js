@@ -14,3 +14,20 @@
  * Please NOTE, that you should omit the .html extension
  * Please do the task in the scope of the file. Create a pull request a share it with your mentor.
  */
+
+const fs = require('fs');
+
+function parse(jsonFile) {
+    const parsedJson = jsonFile.list.entries.map(o => {
+            return {docId: `http://doc.epam.com/${(o.entry.name.replace(".html", ""))}`}
+        });
+
+    fs.writeFile('./parsed.json', JSON.stringify(parsedJson), err => {
+        if (err) {
+            throw err;
+        }
+        console.log('The file is created');
+    });
+}
+
+parse(require('./test'));

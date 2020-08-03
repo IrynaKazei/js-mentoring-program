@@ -4,4 +4,17 @@
  * 3. Save only those items, where id < 20
  * DOCS: https://www.npmjs.com/package/node-fetch
  */
+const fs = require('fs');
 const fetch = require('node-fetch');
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(result => result.json())
+    .then(users => {
+       const result = users.filter(user => user.id < 20);
+        fs.writeFile('./response.json', JSON.stringify(result), err => {
+            if (err) {
+                throw err;
+            }
+            console.log('The file is created');
+        });
+    });
